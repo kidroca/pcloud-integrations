@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react';
 import { IBM_Plex_Mono } from 'next/font/google'
 
 const nextFont = IBM_Plex_Mono({ weight: '500', subsets: ['latin', 'cyrillic'] })
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={nextFont.className}>{children}</body>
+      <body className={nextFont.className}>
+      {children}
+      <Analytics />
+      </body>
     </html>
   )
 }
